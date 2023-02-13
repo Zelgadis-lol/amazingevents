@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width. initial-scale=1.0">
+    <title>Amazing Events</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img id="MDB-logo" src="./assets/img/Logo Amazing Events.png"
+                        alt="AME Logo" draggable="false" height="30" /></a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menuItems"
+                    aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuItems">
+                    <div class="navbar-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="upcoming_events.html" class="nav-link">Upcoming Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="past_events.html" class="nav-link">Past Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="stats.html" class="nav-link">Stats</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="mt-4 mb-4 row-cols-2 d-flex align-items-center flex-column">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="email" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" id="message" rows="6"></textarea>
+            </div>
+            <button type="submit" class="submit btn btn-primary col-1 d-flex justify-content-center">Submit</button>
+        </div>
+    </main>
+    <footer>
+        <footer class="bg-dark text-center text-white d-flex flex-row justify-content-between">
+            <div class="text-center p-3" style="margin-left: 50px;">
+                <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn text-white btn-floating m-1" style="background-color: green;" href="#!" role="button"><i
+                        class="fab fa-whatsapp"></i></a>
+
+            </div>
+            <div class="text-center p-3 d-flex justify-content-end" style="margin-right: 50px;">
+                <a class="text-white d-flex align-items-center" href="#">Christian Charro</a>
+            </div>
+        </footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+<script src="./assets/js/main.js"></script>
+
+</html>
