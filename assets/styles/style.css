@@ -36,6 +36,13 @@ li>a[href="#"] {
     background-color: limegreen;
 }
 
+.carousel {
+    margin: 0px;
+    margin-bottom: 50px;
+}
+
+
+
 .search {
     margin: 0px 50px;
 }
@@ -45,29 +52,44 @@ li>a[href="#"] {
     flex-direction: row;
     margin-right: 50px;
 }
-.card{
-    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+
+.tarjetas {
+    margin-bottom: 3rem;
 }
 
-.card-footer{
+.card {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    width: 18rem;
+}
+
+.card-footer {
     padding: 0px !important;
 }
-.card-footer>p{
+
+.card-footer>p {
     margin-bottom: 0px;
     font-size: 12px;
 }
 
 .card-img-top {
     width: 100%;
-    height: 30vh;
-    object-fit:contain;
+    height: 50%;
+    object-fit: cover;
 }
 
-.submit{
-    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+.submit {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width: 700px) {
+    #featureContainer .carousel-inner .carousel-item.active,
+    #featureContainer .carousel-inner .carousel-item-next,
+    #featureContainer .carousel-inner .carousel-item-prev {
+        display: flex;
+        gap: 5px;
+        height: 6rem;
+    }
+
     .search {
         margin: 0px 10px;
         display: flex;
@@ -84,9 +106,46 @@ li>a[href="#"] {
 }
 
 @media only screen and (max-width: 579px) {
-    .align-items-stretch{
+    .align-items-stretch {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
+}
+
+#featureContainer .carousel-inner .carousel-item.active,
+#featureContainer .carousel-inner .carousel-item-next,
+#featureContainer .carousel-inner .carousel-item-prev {
+    display: flex;
+    gap: 20px;
+    height: 10rem;
+}
+
+#featureContainer .carousel-inner .carousel-item-end.active,
+#featureContainer .carousel-inner .carousel-item-next {
+    transform: translateX(33.3%);
+}
+
+#featureContainer .carousel-inner .carousel-item-start.active,
+#featureContainer .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.3%);
+}
+
+#featureContainer .card img {
+    width: 90%;
+    height: 40vh;
+}
+
+#featureContainer .carousel-item {
+    justify-content: space-between;
+}
+
+#featureContainer .carousel-inner .carousel-item-end,
+#featureContainer .carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+#featureContainer .card {
+    border: 0;
+    position: relative;
 }
