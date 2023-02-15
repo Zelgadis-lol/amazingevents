@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Helvetica;
-    /* outline: 1px solid red; */
 }
 
 header {
@@ -47,6 +46,7 @@ main {
 
 li>a[href="#"] {
     background-color: limegreen;
+    border-radius: 5px;
 }
 
 .carousel {
@@ -131,6 +131,13 @@ li>a[href="#"] {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
+.tabla {
+    margin-bottom: 80px;
+}
+
+.info>th {
+    font-size: 12px !important;
+}
 
 
 @media only screen and (max-width: 700px) {
@@ -164,7 +171,7 @@ li>a[href="#"] {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .detalle {
         display: flex;
         flex-direction: column;
@@ -176,11 +183,11 @@ li>a[href="#"] {
         width: 100%;
         object-fit: cover;
     }
-    
+
     .detimg>img {
         width: 100%;
     }
-    
+
     .dettext {
         height: 50%;
         width: 100%;
@@ -227,4 +234,8 @@ li>a[href="#"] {
 #featureContainer .card {
     border: 0;
     position: relative;
+}
+
+.d-block {
+    border-radius: 7px;
 }
