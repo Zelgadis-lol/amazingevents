@@ -175,7 +175,7 @@ const data = {
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByClassName('row');
 
-function leoData(data, contenedor) {
+function creoCards(data, contenedor) {
   for (let i = 0; i < data.events.length; i++) {
     if(data.currentDate > data.events[i].date)
       continue;
@@ -202,4 +202,4 @@ function leoData(data, contenedor) {
 }
 
 
-leoData(data, container);
+creoCards(data, container);

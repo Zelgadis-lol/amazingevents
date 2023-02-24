@@ -80,8 +80,8 @@ const data = {
       "date": "2022-01-22",
       "description": "The only concert of the most emblematic band in the world.",
       "category": "Music Concert",
-      "place": "Room A"
-      , "capacity": 138000,
+      "place": "Room A",
+      "capacity": 138000,
       "estimate": 138000,
       "price": 150
     },
@@ -175,7 +175,7 @@ const data = {
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByClassName('row');
 
-function leoData(data, contenedor) {
+function creoCards(data, contenedor) {
   for (let i = 0; i < data.events.length; i++) {
     let div = document.createElement("div");
     div.className = "col-lg-3 col-md-4 col-sm-6 mb-3 d-flex align-items-stretch"
@@ -199,4 +199,4 @@ function leoData(data, contenedor) {
 }
 
 
-leoData(data, container);
+creoCards(data, container);
