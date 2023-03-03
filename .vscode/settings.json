@@ -1,2 +1,8 @@
 {
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "afterDelay",
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true
 }
