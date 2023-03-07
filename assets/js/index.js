@@ -1,5 +1,36 @@
 import data from "./data.js";
 
+const categorias = [
+  ...new Set(data.events.map((item) => item.category)),
+].sort();
+console.log(categorias);
+
+/* const categorias = {};
+let arrays = [];
+arrays = arrCategorias.filter((item) =>
+  categorias[item.category] ? false : (categorias[item.category] = true)
+); */
+
+const fragmentC = document.createDocumentFragment();
+const containerC = document.getElementsByClassName("categorias");
+
+function creoCategorias(data, contenedorC) {
+  for (let i = 0; i < data.length; i++) {
+    let div = document.createElement("div");
+    div.innerHTML += `
+        <label for="cat${i}">${data[i]}</label>
+        <input
+            type="checkbox"
+            id="cat${i}"
+            value="${data[i]}"
+            name="categoria"
+        />
+    `;
+    fragmentC.appendChild(div);
+  }
+  contenedorC[0].appendChild(fragmentC);
+}
+
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByClassName("row");
 
@@ -26,4 +57,5 @@ function creoCards(data, contenedor) {
   contenedor[0].appendChild(fragment);
 }
 
+creoCategorias(categorias, containerC);
 creoCards(data, container);
