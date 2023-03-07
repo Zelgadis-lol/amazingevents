@@ -67,6 +67,9 @@ function filtroData() {
   creoCards(arrays, container);
 }
 
+creoCategorias(categorias, containerC);
+creoCards(data.events, container);
+
 let checkboxes = document.querySelectorAll("input[type=checkbox]");
 
 checkboxes.forEach(function (checkbox) {
@@ -82,5 +85,3 @@ input.addEventListener("keyup", () => {
   filtroData();
 });
 
-creoCategorias(categorias, containerC);
-creoCards(data.events, container);
