@@ -1,15 +1,7 @@
 import data from "./data.js";
 
-const categorias = [
-  ...new Set(data.events.map((item) => item.category)),
-].sort();
-console.log(categorias);
-
-/* const categorias = {};
-let arrays = [];
-arrays = arrCategorias.filter((item) =>
-  categorias[item.category] ? false : (categorias[item.category] = true)
-); */
+let arrayC = [];
+let categorias = {};
 
 const fragmentC = document.createDocumentFragment();
 const containerC = document.getElementsByClassName("categorias");
@@ -38,6 +30,8 @@ function creoCards(data, contenedor) {
   for (let i = 0; i < data.events.length; i++) {
     if (data.currentDate > data.events[i].date) continue;
 
+    arrayC.push(data.events[i].category);
+
     let div = document.createElement("div");
     div.className =
       "col-lg-3 col-md-4 col-sm-6 mb-3 d-flex align-items-stretch";
@@ -56,8 +50,11 @@ function creoCards(data, contenedor) {
     `;
     fragment.appendChild(div);
   }
+
+  categorias = [...new Set(arrayC)].sort();
+  
   contenedor[0].appendChild(fragment);
 }
 
-creoCategorias(categorias, containerC);
 creoCards(data, container);
+creoCategorias(categorias, containerC);
