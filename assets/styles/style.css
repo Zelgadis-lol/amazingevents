@@ -137,6 +137,17 @@ li>a[href="#"] {
     color: grey;
 }
 
+.details-deta>p{
+    font-size: 12px;
+    color: grey;
+    width: 25%;
+}
+
+.card-textD {
+    height:60%;
+    padding: 0px 20px;
+}
+
 .form {
     margin-bottom: 80px;
 }

@@ -29,22 +29,22 @@ function creoCategorias(data, contenedorC) {
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByClassName("row");
 
-function creoCards(data, contenedor) {
+function creoCards(datos, contenedor) {
   contenedor[0].innerHTML = "";
 
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < datos.length; i++) {
     let div = document.createElement("div");
     div.className =
       "col-lg-3 col-md-4 col-sm-6 mb-3 d-flex align-items-stretch";
     div.innerHTML += `
         <div class="card">
-            <img src="${data[i].image}" class="card-img-top" alt="Card Image">
+            <img src="${datos[i].image}" class="card-img-top" alt="Card Image">
             <div class="card-body d-flex flex-column">
-                <h5 class="card-title">${data[i].name}</h5>
-                <p class="card-text">${data[i].description}</p>
+                <h5 class="card-title">${datos[i].name}</h5>
+                <p class="card-text">${datos[i].description}</p>
                 <div class="card-footer d-flex flex-row justify-content-between align-items-center">
-                    <p>Price $${data[i].price}</p>
-                    <a href="#" class="btn btn-primary mt-auto align-self-start see-more">See more...</a>
+                    <p>Price $${datos[i].price}</p>
+                    <a href="./details.html?id=${datos[i]._id}" class="btn btn-primary mt-auto align-self-start see-more">See more...</a>
                 </div>
             </div>
         </div>

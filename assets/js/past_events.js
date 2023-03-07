@@ -47,7 +47,7 @@ function creoCards(datos, contenedor) {
                 <p class="card-text">${datos[i].description}</p>
                 <div class="card-footer d-flex flex-row justify-content-between align-items-center">
                     <p>Price $${datos[i].price}</p>
-                    <a href="#" class="btn btn-primary mt-auto align-self-start see-more">See more...</a>
+                    <a href="./details.html?id=${datos[i]._id}" class="btn btn-primary mt-auto align-self-start see-more">See more...</a>
                 </div>
             </div>
         </div>
