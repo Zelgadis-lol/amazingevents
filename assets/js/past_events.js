@@ -90,3 +90,8 @@ checkboxes.forEach(function (checkbox) {
 input.addEventListener("keyup", () => {
   filtroData();
 });
+
+//este es para la cruz de borrado dentro del searchbox
+input.addEventListener("search", () => {
+  filtroData();
+});
