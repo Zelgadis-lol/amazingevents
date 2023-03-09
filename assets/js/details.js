@@ -3,10 +3,10 @@ import data from "./data.js";
 // let detalle = document.querySelector("#detalle");
 const queryString = window.location.search;
 
-const params = new URLSearchParams(queryString)
+const params = new URLSearchParams(queryString);
 const ID = params.get("id");
 
-const evento = data.events.find(item => item._id == ID);
+const evento = data.events.find((item) => item._id == ID);
 
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByTagName("main");

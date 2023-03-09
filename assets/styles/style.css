@@ -73,6 +73,15 @@ li>a[href="#"] {
     margin-bottom: 3rem;
 }
 
+.card:hover{
+    cursor: pointer;
+    transform:perspective(400px);
+    z-index: 1;
+    animation: bg 1.4s ease-in-out infinite;
+    scale: 1.2;
+    transition: .5s;
+}
+
 .card {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     width: 18rem;
