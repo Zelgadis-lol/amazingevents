@@ -55,6 +55,22 @@ function creoCards(datos, contenedor) {
     fragment.appendChild(div);
   }
 
+  if (datos.length <= 0) {
+    let div = document.createElement("div");
+    div.className = "d-flex align-items-center justify-content-center";
+    div.innerHTML += `
+        <div class="card">
+            <img src="https://img.freepik.com/vector-premium/plantilla-pagina-web-error-404-lindo-gato_540634-1.jpg" class="card-img-top" alt="Card Image" style="object-fit:contain">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">NOT FOUND</h5>
+                <p class="card-text"></p>
+                
+            </div>
+        </div>
+    `;
+    fragment.appendChild(div);
+  }
+
   categorias = [...new Set(arrayC)].sort();
 
   contenedor[0].appendChild(fragment);
