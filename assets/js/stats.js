@@ -10,10 +10,10 @@ function creoEvent(data, contenedor) {
   let tr = document.createElement("tr");
   let eventMayor = data.events.sort((a, b) => {
     return (
-      Number.parseInt(
+      Number.parseFloat(
         b.assistance ? b.assistance / b.capacity : b.estimate / b.capacity
       ) -
-      Number.parseInt(
+      Number.parseFloat(
         a.assistance ? a.assistance / a.capacity : a.estimate / a.capacity
       )
     );
@@ -21,17 +21,17 @@ function creoEvent(data, contenedor) {
 
   let eventMenor = data.events.sort((a, b) => {
     return (
-      Number.parseInt(
+      Number.parseFloat(
         a.assistance ? a.assistance / a.capacity : a.estimate / a.capacity
       ) -
-      Number.parseInt(
+      Number.parseFloat(
         b.assistance ? b.assistance / b.capacity : b.estimate / b.capacity
       )
     );
   })[0].name;
 
   let eventCapacity = data.events.sort((a, b) => {
-    return Number.parseInt(b.capacity) - Number.parseInt(a.capacity);
+    return Number.parseFloat(b.capacity) - Number.parseFloat(a.capacity);
   })[0].name;
 
   tr.innerHTML += `
