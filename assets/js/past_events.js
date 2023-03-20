@@ -1,8 +1,7 @@
-import data from "./data.js";
-
 let arrayC = [];
 let categorias = {};
 let categoChk = [];
+let data = { currentDate: "", events: [] };
 const input = document.querySelector('input[type="search"]');
 
 const fragmentC = document.createDocumentFragment();
@@ -89,19 +88,27 @@ function filtroData() {
   creoCards(arrays, container);
 }
 
-creoCards(data.events, container);
-creoCategorias(categorias, containerC);
+async function getData() {
+  await fetch("./assets/amazing.json")
+    .then((res) => res.json())
+    .then((res) => (data = res));
 
-let checkboxes = document.querySelectorAll("input[type=checkbox]");
+  creoCards(data.events, container);
+  creoCategorias(categorias, containerC);
 
-checkboxes.forEach(function (checkbox) {
-  checkbox.addEventListener("change", function () {
-    categoChk = Array.from(checkboxes)
-      .filter((i) => i.checked)
-      .map((i) => i.value);
-    filtroData();
+  let checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      categoChk = Array.from(checkboxes)
+        .filter((i) => i.checked)
+        .map((i) => i.value);
+      filtroData();
+    });
   });
-});
+}
+
+getData();
 
 input.addEventListener("keyup", () => {
   filtroData();

@@ -1,9 +1,6 @@
-import data from "./data.js";
-
-const categorias = [
-  ...new Set(data.events.map((item) => item.category)),
-].sort();
 let categoChk = [];
+let categorias = [];
+let data = { currentDate: "", events: [] };
 const input = document.querySelector('input[type="search"]');
 
 const fragmentC = document.createDocumentFragment();
@@ -54,8 +51,7 @@ function creoCards(datos, contenedor) {
 
   if (datos.length <= 0) {
     let div = document.createElement("div");
-    div.className =
-      "d-flex align-items-center justify-content-center";
+    div.className = "d-flex align-items-center justify-content-center";
     div.innerHTML += `
         <div class="card">
             <img src="https://img.freepik.com/vector-premium/plantilla-pagina-web-error-404-lindo-gato_540634-1.jpg" class="card-img-top" alt="Card Image" style="object-fit:contain">
@@ -85,19 +81,29 @@ function filtroData() {
   creoCards(arrays, container);
 }
 
-creoCategorias(categorias, containerC);
-creoCards(data.events, container);
+async function getData() {
+  await fetch("./assets/amazing.json")
+    .then((res) => res.json())
+    .then((res) => (data = res));
 
-let checkboxes = document.querySelectorAll("input[type=checkbox]");
+  categorias = [...new Set(data.events.map((item) => item.category))].sort();
 
-checkboxes.forEach(function (checkbox) {
-  checkbox.addEventListener("change", function () {
-    categoChk = Array.from(checkboxes)
-      .filter((i) => i.checked)
-      .map((i) => i.value);
-    filtroData();
+  creoCategorias(categorias, containerC);
+  creoCards(data.events, container);
+
+  let checkboxes = document.querySelectorAll("input[type=checkbox]");
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      categoChk = Array.from(checkboxes)
+        .filter((i) => i.checked)
+        .map((i) => i.value);
+      console.log(categoChk);
+      filtroData();
+    });
   });
-});
+}
+
+getData();
 
 input.addEventListener("keyup", () => {
   filtroData();

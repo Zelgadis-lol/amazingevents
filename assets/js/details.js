@@ -1,12 +1,21 @@
-import data from "./data.js";
-
-// let detalle = document.querySelector("#detalle");
 const queryString = window.location.search;
-
+let data=[];
 const params = new URLSearchParams(queryString);
 const ID = params.get("id");
 
-const evento = data.events.find((item) => item._id == ID);
+async function getData() {
+  await fetch("./assets/amazing.json")
+    .then((res) => res.json())
+		.then((res) => (data = res));
+	
+	const evento = data.events.find((item) => item._id == ID);
+
+	creoDetalle(evento, container);
+}
+
+getData();
+
+
 
 const fragment = document.createDocumentFragment();
 const container = document.getElementsByTagName("main");
@@ -42,4 +51,3 @@ function creoDetalle(datos, contenedor) {
   contenedor[0].appendChild(fragment);
 }
 
-creoDetalle(evento, container);
