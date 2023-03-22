@@ -1,9 +1,28 @@
 const queryString = window.location.search;
-let data=[];
 const params = new URLSearchParams(queryString);
 const ID = params.get("id");
 
-async function getData() {
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      vueDatos: [],
+      vueDatosFilter: undefined,
+    };
+  },
+  created() {
+    fetch("./assets/amazing.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.vueDatos = res.events;
+        this.vueDatosFilter = res.events.find((item) => item._id == ID);
+      });
+  },
+  methods: {},
+}).mount("#vue");
+
+/* async function getData() {
   await fetch("./assets/amazing.json")
     .then((res) => res.json())
 		.then((res) => (data = res));
@@ -51,3 +70,4 @@ function creoDetalle(datos, contenedor) {
   contenedor[0].appendChild(fragment);
 }
 
+ */

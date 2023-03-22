@@ -50,12 +50,25 @@
 		</header>
 
 		<main>
-			<div class="container p-0 detalle">
+			<div class="container p-0 detalle" id="vue">
 				<div class="detimg d-flex justify-content-center">
-					<img src="./assets/img/Museum_Tour.jpg" class="img-fluid rounded-start" alt="...">
+					<img v-bind:src="vueDatosFilter.image" class="img-fluid rounded-start" alt="...">
 				</div>
 				<div class="dettext">
-					<!-- aca va la tarjeta del js -->
+					<div class="card-body" style="margin-bottom: 20px;">
+						<h5 class="card-titleD bold d-flex justify-content-center">{{vueDatosFilter.name}}</h5>
+						<p class="card-textD d-flex justify-content-center">{{vueDatosFilter.description}}</p>
+					</div>
+					<div class="details-deta d-flex justify-content-around ">
+						<p>Date: {{vueDatosFilter.date}}</p>
+						<p>Category: {{vueDatosFilter.category}}</p>
+						<p>Place: {{vueDatosFilter.place}}</p>
+					</div>
+					<div class="details-deta d-flex justify-content-around">
+						<p>Capacity: {{vueDatosFilter.capacity}}</p>
+						<p>Assistance: {{vueDatosFilter.assistance}}</p>
+						<p>Price: {{vueDatosFilter.price}}</p>
+					</div>
 				</div>
 			</div>
 		</main>
