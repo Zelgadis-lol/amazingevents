@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       vueDatos: [],
-      vueDatosFilter: undefined,
+      vueDatosFilter: [],
       vueCategorias: [],
       textoBus: "",
       checked: [],

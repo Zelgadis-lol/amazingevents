@@ -86,7 +86,7 @@
 			</div>
 
 
-			<div class=" tabla d-flex flex-column align-items-center">
+			<div class=" tabla d-flex flex-column align-items-center" id="vue">
 				<div class="col-md-10">
 					<h2 style="background-color: darkgray;">Events statics</h2>
 					<table class="table table-condensed table-bordered table-hover">
@@ -100,6 +100,9 @@
 						<tbody class="event">
 							<tr>
 								<!-- js creoEvent -->
+								<td>{{vueEvent.mayor}}</td>
+								<td>{{vueEvent.menor}}</td>
+								<td>{{vueEvent.capacity}}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -116,6 +119,13 @@
 						</thead>
 						<tbody class="upcoming">
 							<!-- js creoUpcoming -->
+							<template v-for="item of vueUpcoming">
+								<tr>
+									<td>{{item.categoria}}</td>
+									<td>$ {{item.ingresos}}</td>
+									<td>{{item.estimado}} %</td>
+								</tr>
+							</template>
 						</tbody>
 					</table>
 				</div>
@@ -131,6 +141,13 @@
 						</thead>
 						<tbody class="past">
 							<!-- js creoPast -->
+							<template v-for="item of vuePast">
+								<tr>
+									<td>{{item.categoria}}</td>
+									<td>$ {{item.ingresos}}</td>
+									<td>{{item.assistance}} %</td>
+								</tr>
+							</template>
 						</tbody>
 					</table>
 				</div>
