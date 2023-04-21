@@ -1,2 +1,2 @@
-# AME-CHARRO
+# AME
 Amazing Events
